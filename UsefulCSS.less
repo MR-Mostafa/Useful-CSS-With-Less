@@ -55,3 +55,33 @@
 		border-radius: @radius e('/') @elliptical;
 	}
 }
+
+/*
+	The border-image property allows you to specify an image to be used as the border around an element.
+	The border-image property is a shorthand property for:
+		▸ border-image-source
+		▸ border-image-slice
+		▸ border-image-width
+		▸ border-image-outset
+		▸ border-image-repeat.
+
+	Example:
+		.border-image(url(border.png) 30% stretch);
+
+	Output:
+		div.test {
+			-webkit-border-image: url(border.png) 30% stretch;
+			-moz-border-image: url(border.png) 30% stretch;
+			-o-border-image: url(border.png) 30% stretch;
+			border-image: url(border.png) 30% stretch;
+		}
+
+	Syntax:
+		border-image: source | slice | width | outset | repeat
+*/
+.border-image(...){
+	-webkit-border-image:@arguments;
+	-moz-border-image:@arguments;
+	-o-border-image:@arguments;
+	border-image:@arguments;
+}
