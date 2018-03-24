@@ -398,3 +398,46 @@
 	-o-transform: rotateZ(unit(@deg, deg));
 	transform: rotateZ(unit(@deg, deg));
 }
+
+/*
+	The scale method increases or decreases the size of an element (according to the parameters given for the width and height).
+	The scale function is specified with either one or two values, which represent the amount of scaling to be applied in each direction.
+	The scale3d CSS function defines a transformation that resizes an element in 3D space.
+*/
+.scale (@x:0; @y:@x) {
+	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transform: scale(@args);
+	-moz-transform: scale(@args);
+	-ms-transform: scale(@args);
+	-o-transform: scale(@args);
+	transform: scale(@args);
+}
+.scale3d (@x; @y; @z) {
+	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transform: scale3d(@args);
+	-moz-transform: scale3d(@args);
+	-ms-transform: scale3d(@args);
+	-o-transform: scale3d(@args);
+	transform: scale3d(@args);
+}
+.scaleX (@x) {
+	-webkit-transform: scaleX(@x);
+	-moz-transform: scaleX(@x);
+	-ms-transform: scaleX(@x);
+	-o-transform: scaleX(@x);
+	transform: scaleX(@x);
+}
+.scaleY (@y) {
+	-webkit-transform: scaleY(@y);
+	-moz-transform: scaleY(@y);
+	-ms-transform: scaleY(@y);
+	-o-transform: scaleY(@y);
+	transform: scaleY(@y);
+}
+.scaleZ (@z) {
+	-webkit-transform: scaleY(@z);
+	-moz-transform: scaleY(@z);
+	-ms-transform: scaleY(@z);
+	-o-transform: scaleY(@z);
+	transform: scaleY(@z);
+}
