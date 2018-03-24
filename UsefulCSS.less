@@ -273,3 +273,23 @@
 	-ms-transform: rotate(unit(@rotate, deg)) scale(@scale) skew(unit(@skew, deg)) translate(@translate);
 	transform: rotate(unit(@rotate, deg)) scale(@scale) skew(unit(@skew, deg)) translate(@translate);
 }
+
+/*
+	The transform-origin property allows you to change the position of transformed elements.
+	2D transformations can change the x- and y-axis of an element. 3D transformations can also change the z-axis of an element.
+
+	Note: This property must be used together with the transform property.
+
+	Syntax:
+		transform-origin: x-axis y-axis z-axis
+
+			▸ Possible values for x-axis: left | center | right | length | %
+			▸ Possible values for y-axis: top | center | bottom | length | %
+			▸ Possible values for z-axis: length
+*/
+.transform-origin(@value){
+	-webkit-transform-origin:@value;
+	-moz-transform-origin:@value;
+	-o-transform-origin:@value;
+	transform-origin:@value;
+}
