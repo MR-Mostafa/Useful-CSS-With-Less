@@ -532,3 +532,72 @@
 	-moz-perspective-origin:@value;
 	perspective-origin:@value;
 }
+
+/*
+	CSS transitions allows you to change property values smoothly (from one value to another), over a given duration.
+
+	To create a transition effect, you must specify two things:
+		▸ the CSS property you want to add an effect to
+		▸ the duration of the effect
+
+	Specify the Speed Curve of the Transition
+	The transition-timing-function property specifies the speed curve of the transition effect.
+	The transition-timing-function property can have the following values:
+		▸ < <ease> - specifies a transition effect with a slow start, then fast, then end slowly (this is default)
+		▸ <linear> - specifies a transition effect with the same speed from start to end
+		▸ <ease-in> - specifies a transition effect with a slow start
+		▸ <ease-out> - specifies a transition effect with a slow end
+		▸ <ease-in-out> - specifies a transition effect with a slow start and end
+		▸ <step-start> - Equivalent to steps(1, start)
+		▸ <step-end> - Equivalent to steps(1, end)
+		▸ <cubic-bezier(n,n,n,n)> - lets you define your own values in a cubic-bezier function
+
+	Note: If you would like to use more transition effect, Don't forget to use semicolon at the end of mixin.
+		  Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+
+		Example:
+			.transition(width 800ms ease-in, height 700ms linear;);
+																↧
+													 This semicolon is important!
+
+		Output:
+			div.box-test {
+				-webkit-transition: width 800ms ease-in, height 700ms linear;
+				-moz-transition: width 800ms ease-in, height 700ms linear;
+				-o-transition: width 800ms ease-in, height 700ms linear;
+				transition: width 800ms ease-in, height 700ms linear;
+			}
+
+	Syntax:
+		transition: <property> <duration> <timing-function> <delay>;
+*/
+.transition(...) {
+	-webkit-transition: @arguments;
+	-moz-transition: @arguments;
+	-o-transition: @arguments;
+	transition: @arguments;
+}
+.transition-property(@property) {
+	-webkit-transition-property: @property;
+	-moz-transition-property: @property;
+	-o-transition-property: @property;
+	transition-property: @property;
+}
+.transition-duration(@duration) {
+	-webkit-transition-duration: @duration;
+	-moz-transition-duration: @duration;
+	-o-transition-duration: @duration;
+	transition-duration: @duration;
+}
+.transition-timing-function(@function) {
+	-webkit-transition-timing-function: @function;
+	-moz-transition-timing-function: @function;
+	-o-transition-timing-function: @function;
+	transition-timing-function: @function;
+}
+.transition-delay(@delay) {
+	-webkit-transition-delay: @delay;
+	-moz-transition-delay: @delay;
+	-o-transition-delay: @delay;
+	transition-delay: @delay;
+}
