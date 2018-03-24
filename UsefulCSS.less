@@ -119,3 +119,29 @@
 .text-shadow(...) {
 	text-shadow: @arguments;
 }
+
+/*
+	The box-shadow CSS property is used to add shadow effects around an element's frame.
+	box-shadow syntax: <horizontal-offset> <vertical-offset> <blur> <spread> <color>;
+	The box-shadow property attaches one or more shadows to an element.
+
+	Note: If you would like to use more shadows to an element, Don't forget to use semicolon at the end of mixin.
+		  Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+
+		Example:
+			.box-shadow(5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;);
+																				↧
+																	 This semicolon is important!
+
+		Output:
+			div.box-test {
+				-webkit-box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+				-moz-box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+				box-shadow: 5px 5px 8px blue, 10px 10px 8px red, 15px 15px 8px green;
+			}
+*/
+.box-shadow(...) {
+	-webkit-box-shadow: @arguments;
+	-moz-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
