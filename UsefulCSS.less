@@ -872,3 +872,71 @@
 	-o-background-size:@args;
 	background-size:@args;
 }
+
+/*
+  The filter property defines visual effects (like blur and saturation) to an element (often <img>).
+
+  Filter Functions:
+   ▸ none               ==> Default value. Specifies no effects
+
+   ▸ blur(px)           ==> Applies a blur effect to the image. A larger value will create more blur.
+                              If no value is specified, 0 is used.
+
+   ▸ brightness(%)      ==> Adjusts the brightness of the image.
+                              0% will make the image completely black.
+                              100% (1) is default and represents the original image.
+                              Values over 100% will provide brighter results.
+
+   ▸ contrast(%)        ==> Adjusts the contrast of the image.
+                              0% will make the image completely black.
+                              100% (1) is default and represents the original image.
+                              Values over 100% will provide results with less contrast.
+
+   ▸ drop-shadow        ==> (h-shadow v-shadow blur spread color)
+                              Applies a drop shadow effect to the image.
+                              An example of creating a red shadow, which is 8px big both horizontally and vertically, with a blur effect of 10px:
+                                filter: drop-shadow(8px 8px 10px red);
+                              Tip: This filter is similar to the box-shadow property.
+
+   ▸ grayscale(%)       ==> Converts the image to grayscale.
+                              0% (0) is default and represents the original image.
+                              100% will make the image completely gray (used for black and white images).
+                              Note: Negative values are not allowed.
+
+   ▸ hue-rotate(deg)    ==> Applies a hue rotation on the image. The value defines the number of degrees around the color circle the image samples will be adjusted. 0deg is default, and represents the original image.
+                              Note: Maximum value is 360deg.
+
+   ▸ invert(%)          ==>	Inverts the samples in the image.
+                              0% (0) is default and represents the original image.
+                              100% will make the image completely inverted.
+                              Note: Negative values are not allowed.
+
+   ▸ opacity(%)         ==>	Sets the opacity level for the image. The opacity-level describes the transparency-level, where:
+                              0% is completely transparent.
+                              100% (1) is default and represents the original image (no transparency).
+                              Note: Negative values are not allowed.
+                              Tip: This filter is similar to the opacity property.
+
+   ▸ saturate(%)        ==> Saturates the image.
+                              0% (0) will make the image completely un-saturated.
+                              100% is default and represents the original image.
+                              Values over 100% provides super-saturated results.
+                              Note: Negative values are not allowed.
+
+   ▸ sepia(%)           ==> Converts the image to sepia.
+                              0% (0) is default and represents the original image.
+                              100% will make the image completely sepia.
+                              Note: Negative values are not allowed.
+
+   ▸ url()              ==> The url() function takes the location of an XML file that specifies an SVG filter, and may include an anchor to a specific filter element.
+                            Example:
+                              filter: url(svg-url#element-id)
+
+
+  Syntax:
+    filter: none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia() | url();
+*/
+.filter(@args) {
+	-webkit-filter: @args;
+	filter: @args;
+}
