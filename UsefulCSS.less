@@ -940,3 +940,44 @@
 	-webkit-filter: @args;
 	filter: @args;
 }
+
+/*
+  The ::placeholder pseudo element (or a pseudo class, in some cases, depending on the browser implementation) allows you to style the placeholder text of a form element.
+  As in, the text set with the placeholder attribute
+    <input type="name" placeholder="input your name">
+
+  NOTE: Firefox adds a lower opacity to the placeholder, so we use opacity: 1 to fix this.
+*/
+.placeholder(@ruleset){
+	/* WebKit, Blink, Edge*/
+	::-webkit-input-placeholder {
+		@ruleset();
+	}
+
+	/* Mozilla Firefox 4 to 18*/
+	:-moz-placeholder {
+		opacity:1;
+		@ruleset();
+	}
+
+	/* Mozilla Firefox 19+*/
+	::-moz-placeholder {
+		opacity:1;
+		@ruleset();
+	}
+
+	/* Internet Explorer 10-11*/
+	:-ms-input-placeholder {
+		@ruleset();
+	}
+
+	/* Microsoft Edge*/
+	::-ms-input-placeholder {
+		@ruleset();
+	}
+
+	/* Chrome, Firefox, Opera, Safari 10.1+*/
+	::placeholder {
+		@ruleset();
+	}
+}
