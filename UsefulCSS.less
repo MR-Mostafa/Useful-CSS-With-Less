@@ -711,3 +711,134 @@
 	-o-animation-play-state: @args;
 	animation-play-state: @args;
 }
+
+/*
+	The @media rule is used in media queries to apply different styles for different media types/devices.
+	Media queries can be used to check many things, such as:
+	   ▸ width and height of the viewport
+	   ▸ width and height of the device
+	   ▸ orientation (is the tablet/phone in landscape or portrait mode?)
+	   ▸ resolution
+
+	Yuo can use:
+		.media-max() 		==> For special media size that needs you choose max-width.
+		.media-min() 		==> For special media size that needs you choose min-width.
+
+		.mobile() 			==> To make coding easier, for media size from the [http://materializecss.com/grid.html] framework have been used.
+		.tablet() 			==> To make coding easier, for media size from the [http://materializecss.com/grid.html] framework have been used.
+		.desktop() 			==> To make coding easier, for media size from the [http://materializecss.com/grid.html] framework have been used.
+		.desktop-wide() 	==> To make coding easier, for media size from the [http://materializecss.com/grid.html] framework have been used.
+
+        .mobile-small-bs() 	==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
+        .mobile-bs() 		==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
+		.tablet-bs() 		==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
+		.desktop-bs() 		==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
+		.desktop-wide-bs() 	==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
+
+    NOTE: IF you need bootstrap V3 media with mixin less, visit : http://simbo.github.io/2014/03/less-media-query-mixins.html
+
+	Examples:
+		.media-max(650px,{
+			.header logo{
+				width: 400px;
+				background-color: crimson;
+			}
+		});
+
+
+		.mobile({
+			.header logo{
+				width: 200px;
+				background-color: darkgoldenrod;
+			}
+		});
+
+		.desktop-bs({
+          .header logo{
+            width: 800px;
+            background-color: firebrick;
+          }
+		});
+
+
+
+	Outputs:
+		@media only screen and (max-width: 650px) {
+		  .header logo {
+			width: 400px;
+			background-color: crimson;
+		  }
+		}
+
+
+		@media only screen and (max-width: 600px) {
+		  .header logo {
+			width: 200px;
+			background-color: darkgoldenrod;
+		  }
+		}
+
+      @media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+        .header logo {
+          width: 800px;
+          background-color: firebrick;
+        }
+      }
+
+
+*/
+.media-max(@maxWidth; @rules) {
+	@media only screen and (max-width: @maxWidth) {
+		@rules();
+	}
+}
+.media-min(@minWidth; @rules) {
+	@media only screen and (min-width: @minWidth) {
+		@rules();
+	}
+}
+.mobile(@rules){
+	@media only screen and (max-width: 600px){
+		@rules();
+	}
+}
+.tablet(@rules){
+	@media only screen and (min-width: 600px) and (max-width: 991.99px) {
+		@rules();
+	}
+}
+.desktop(@rules){
+	@media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+		@rules();
+	}
+}
+.desktop-wide(@rules){
+	@media only screen and (min-width: 1200px) {
+		@rules();
+	}
+}
+.mobile-small-bs(@rules){
+	@media only screen and (max-width: 576.99px){
+		@rules();
+	}
+}
+.mobile-bs(@rules){
+	@media only screen and (min-width: 577px) and (max-width: 767.99px) {
+		@rules();
+	}
+}
+.tablet-bs(@rules){
+	@media only screen and (min-width: 768px) and (max-width: 991.99px) {
+		@rules();
+	}
+}
+.desktop-bs(@rules){
+	@media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+		@rules();
+	}
+}
+.desktop-wide-bs(@rules){
+	@media only screen and (min-width: 1200px) {
+		@rules();
+	}
+}
