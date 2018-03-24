@@ -348,3 +348,53 @@
 	-o-transform:  translateZ(@z);
 	transform:  translateZ(@z);
 }
+
+/*
+	  The rotate() method rotates an element clockwise or counter-clockwise according to a given degree.
+	  Syntax:
+	  	rotate(x, y, z, angle)
+
+
+	  The rotate3d() CSS function defines a transformation that rotates an element around a fixed axis in 3D space, without deforming it
+	  The amount of rotation created by rotate3d() is specified by three <number>s and one <angle>.
+	  The <number>s represent the x-, y-, and z-coordinates of the vector denoting the axis of rotation.
+	  The <angle> represents the angle of rotation; if positive, the movement will be clockwise; if negative, it will be counter-clockwise.
+
+	  Syntax:
+	  	rotate3d(x, y, z, angle)
+*/
+.rotate (@deg) {
+	-webkit-transform: rotate(unit(@deg, deg));
+	-moz-transform: rotate(unit(@deg, deg));
+	-ms-transform: rotate(unit(@deg, deg));
+	-o-transform: rotate(unit(@deg, deg));
+	transform: rotate(unit(@deg, deg));
+}
+.rotate3d (@x; @y; @z; @deg) {
+	-webkit-transform: rotate3d(@x, @y, @z, unit(@deg, deg));
+	-moz-transform: rotate3d(@x, @y, @z, unit(@deg, deg));
+	-ms-transform: rotate3d(@x, @y, @z, unit(@deg, deg));
+	-o-transform: rotate3d(@x, @y, @z, unit(@deg, deg));
+	transform: rotate3d(@x, @y, @z, unit(@deg, deg));
+}
+.rotateX (@deg) {
+	-webkit-transform: rotateX(unit(@deg, deg));
+	-moz-transform: rotateX(unit(@deg, deg));
+	-ms-transform: rotateX(unit(@deg, deg));
+	-o-transform: rotateX(unit(@deg, deg));
+	transform: rotateX(unit(@deg, deg));
+}
+.rotateY (@deg) {
+	-webkit-transform: rotateY(unit(@deg, deg));
+	-moz-transform: rotateY(unit(@deg, deg));
+	-ms-transform: rotateY(unit(@deg, deg));
+	-o-transform: rotateY(unit(@deg, deg));
+	transform: rotateY(unit(@deg, deg));
+}
+.rotateZ (@deg) {
+	-webkit-transform: rotateZ(unit(@deg, deg));
+	-moz-transform: rotateZ(unit(@deg, deg));
+	-ms-transform: rotateZ(unit(@deg, deg));
+	-o-transform: rotateZ(unit(@deg, deg));
+	transform: rotateZ(unit(@deg, deg));
+}
