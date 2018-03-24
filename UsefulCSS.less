@@ -842,3 +842,33 @@
 		@rules();
 	}
 }
+
+/*
+	The background-size property specifies the size of the background images.
+	There are four different syntaxes you can use with this property: the keyword syntax ("auto", "cover" and "contain"), the one-value syntax (sets the width of the image (height becomes "auto"), the two-value syntax (first value: width of the image, second value: height), and the multiple background syntax (separated with comma).
+
+	Note: If you would like to use more background-size, Don't forget to use semicolon at the end of mixin.
+		  Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+
+	Syntax:
+		background-size: auto|length|cover|contain;
+
+	Example:
+		.background-size(contain, cover;);
+								       ↧
+					   		This semicolon is important!
+
+	Output:
+		div.img {
+			-webkit-background-size: contain, cover;
+			-moz-background-size: contain, cover;
+			-o-background-size: contain, cover;
+			background-size: contain, cover;
+		}
+*/
+.background-size(@args){
+	-webkit-background-size:@args;
+	-moz-background-size:@args;
+	-o-background-size:@args;
+	background-size:@args;
+}
