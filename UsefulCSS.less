@@ -306,3 +306,45 @@
 	-moz-transform-style:@style;
 	transform-style:@style;
 }
+
+/*
+	The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
+	The translate3d() CSS function repositions an element in 3D space
+*/
+.translate (@x:0; @y:0) {
+	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transform:translate(@args);
+	-moz-transform: translate(@args);
+	-ms-transform: translate(@args);
+	-o-transform:  translate(@args);
+	transform:  translate(@args);
+}
+.translate3d (@x; @y; @z) {
+	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transform:translate3d(@args);
+	-moz-transform: translate3d(@args);
+	-ms-transform: translate3d(@args);
+	-o-transform:  translate3d(@args);
+	transform:  translate3d(@args);
+}
+.translateX (@x) {
+	-webkit-transform:translateX(@x);
+	-moz-transform: translateX(@x);
+	-ms-transform: translateX(@x);
+	-o-transform:  translateX(@x);
+	transform:  translateX(@x);
+}
+.translateY (@y) {
+	-webkit-transform:translateY(@y);
+	-moz-transform: translateY(@y);
+	-ms-transform: translateY(@y);
+	-o-transform:  translateY(@y);
+	transform:  translateY(@y);
+}
+.translateZ (@z) {
+	-webkit-transform:translateZ(@z);
+	-moz-transform: translateZ(@z);
+	-ms-transform: translateZ(@z);
+	-o-transform:  translateZ(@z);
+	transform:  translateZ(@z);
+}
