@@ -223,9 +223,8 @@
 	In brief and at a glance:
 		.font-face(@font-family-name; @font-name; @font-style; @font-weight; @woff; @woff2; @ttf; @eot; @svg);
 */
+@font-path: "../fonts";
 .font-face(@font-family-name: @font-name; @font-name; @font-style: normal; @font-weight: normal; @woff: "woff"; @woff2: NULL; @ttf: NULL; @eot: NULL; @svg: NULL) {
-	@font-family-name-to-loawer: e(`'@{font-family-name}'.toLowerCase()`);
-	@font-path: "../fonts/@{font-family-name-to-loawer}";
 	@font-face {
 		font-family: "@{font-family-name}";
 		font-style: @font-style;
