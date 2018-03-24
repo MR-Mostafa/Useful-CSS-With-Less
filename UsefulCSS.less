@@ -441,3 +441,30 @@
 	-o-transform: scaleY(@z);
 	transform: scaleY(@z);
 }
+
+/*
+	The skew() method skews an element along the X and Y-axis by the given angles.
+	The skewX() method skews an element along the X-axis by the given angle.
+	The skewY() method skews an element along the Y-axis by the given angle.
+*/
+.skew(@deg:0; @deg2:0) {
+	-webkit-transform: skew(unit(@deg, deg), unit(@deg2, deg));
+	-moz-transform: skew(unit(@deg, deg), unit(@deg2, deg));
+	-ms-transform: skew(unit(@deg, deg), unit(@deg2, deg));
+	-o-transform: skew(unit(@deg, deg), unit(@deg2, deg));
+	transform: skew(unit(@deg, deg), unit(@deg2, deg));
+}
+.skewX(@deg){
+	-webkit-transform: skewX(unit(@deg, deg));
+	-moz-transform: skewX(unit(@deg, deg));
+	-ms-transform: skewX(unit(@deg, deg));
+	-o-transform: skewX(unit(@deg, deg));
+	transform: skewX(unit(@deg, deg));
+}
+.skewY(@deg){
+	-webkit-transform: skewY(unit(@deg, deg));
+	-moz-transform: skewY(unit(@deg, deg));
+	-ms-transform: skewY(unit(@deg, deg));
+	-o-transform: skewY(unit(@deg, deg));
+	transform: skewY(unit(@deg, deg));
+}
