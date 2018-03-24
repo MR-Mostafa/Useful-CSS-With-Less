@@ -85,3 +85,15 @@
 	-o-border-image:@arguments;
 	border-image:@arguments;
 }
+
+/*
+	The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.
+
+	Syntax :
+		box-sizing: content-box | border-box
+*/
+.box-sizing(@value){
+	-webkit-box-sizing:@value;
+	-moz-box-sizing:@value;
+	box-sizing:@value;
+}
