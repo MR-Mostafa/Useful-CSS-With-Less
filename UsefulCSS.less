@@ -161,7 +161,7 @@
 		*.svg         ==> Old iOS
 
 	Variable:
-		@font-path:          ==> Enter your font location. Default: "../fonts";
+		@font-path:          ==> Enter your font location. Default: "../fonts/@{font-family-name}";
 		@font-family-name:   ==> Use this variable for the font-family property. [e.g: roboto]
 		@font-name:          ==> Write the font name without the suffix. [e.g: roboto-bold]
 		@font-style:         ==> normal | italic | oblique. Default: normal;
@@ -223,8 +223,8 @@
 	In brief and at a glance:
 		.font-face(@font-family-name; @font-name; @font-style; @font-weight; @woff; @woff2; @ttf; @eot; @svg);
 */
-@font-path: "../fonts";
-.font-face(@font-family-name: @font-name; @font-name; @font-style: normal; @font-weight: normal; @woff: "woff"; @woff2: NULL; @ttf: NULL; @eot: NULL; @svg: NULL) {
+.font-face(@font-family-name; @font-name: @font-family-name; @font-style: normal; @font-weight: normal; @woff: "woff"; @woff2: NULL; @ttf: NULL; @eot: NULL; @svg: NULL) {
+	@font-path: "../fonts/@{font-family-name}";
 	@font-face {
 		font-family: "@{font-family-name}";
 		font-style: @font-style;
