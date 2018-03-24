@@ -97,3 +97,25 @@
 	-moz-box-sizing:@value;
 	box-sizing:@value;
 }
+
+/*
+	The text-shadow property adds shadow to text.
+	text-shadow syntax: <horizontal-shadow> <vertical-shadow> <blur> <color>;
+	The text-shadow property attaches one or more shadows to a text.
+
+	Note: If you would like to use more shadows to a text, Don't forget to use semicolon at the end of mixin.
+		  Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+
+	  Example:
+		  .text-shadow(0 0 3px #FF0000, 0 0 5px red;);
+												   ↧
+									 This semicolon is important!
+
+	  Output:
+		  p.text-test {
+			text-shadow: 0 0 3px #FF0000, 0 0 5px red;
+		  }
+*/
+.text-shadow(...) {
+	text-shadow: @arguments;
+}
