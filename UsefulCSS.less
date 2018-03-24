@@ -145,3 +145,115 @@
 	-moz-box-shadow: @arguments;
 	box-shadow: @arguments;
 }
+
+/*
+	The CSS @font-face Rule
+	Web fonts allow Web designers to use fonts that are not installed on the user's computer.
+	When you have found/bought the font you wish to use, just include the font file on your web server, and it will be automatically downloaded to the user when needed.
+	Your "own" fonts are defined within the CSS @font-face rule.
+
+	Information about fonts suffix and browsers support:
+		*.woff        ==> Pretty Modern Browsers [FF3.6+, IE9, Chrome6+, Saf5.1+]
+		*.woff2       ==> Super Modern Browsers [FF39+,Chrome36+, Opera24+]
+		*.eot         ==> IE9 Compat Modes
+		*.eot?#iefix  ==> Only IE6-8
+		*.ttf         ==> Safari, Android, iOS
+		*.svg         ==> Old iOS
+
+	Variable:
+		@font-path:          ==> Enter your font location. Default: "../fonts";
+		@font-family-name:   ==> Use this variable for the font-family property. [e.g: roboto]
+		@font-name:          ==> Write the font name without the suffix. [e.g: roboto-bold]
+		@font-style:         ==> normal | italic | oblique. Default: normal;
+		@font-weight:        ==> normal | bold | bolder | lighter | number[e.g: 100,200,300,...,900]. Default: normal;
+		@woff:               ==> Set value "woff" to show woff font. IF set this value "all", shows all font suffix. e.g: woff,woff2,ttf and etc.
+		@woff2:              ==> Set value "woff2" to show woff2 font. IF you want to not show "woff2", set NULL;
+		@ttf:                ==> Set value "ttf" to show ttf font. IF you want to not show "ttf", set NULL;
+		@eot:                ==> Set value "eot" to show eot font. IF you want to not show "eot", set NULL;
+		@svg:                ==> Set value "svg" to show svg font. IF you want to not show "svg", set NULL;
+
+
+	Examples and Outputs:
+		.font-face(Roboto, roboto-bold, normal, bold, "all");
+
+			@font-face {
+				font-family: "roboto";
+				font-style: normal;
+				font-weight: normal;
+				src: local('roboto'),
+					 local('roboto-normal'),
+					 url('../fonts/roboto-normal.woff') format('woff'),
+					 url('../fonts/roboto-normal.woff2') format('woff2'),
+					 url('../fonts/roboto-normal.ttf') format('truetype'),
+					 url('../fonts/roboto-normal.eot'),
+					 url('../fonts/roboto-normal.eot?#iefix') format('embedded-opentype'),
+					 url('../fonts/roboto-normal.svg#roboto-normal') format('svg');
+			}
+
+
+
+		.font-face(Roboto, roboto-bold, normal, bold, "woff", Null, "ttf");
+
+			@font-face {
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: bold;
+				src: local('Roboto'),
+					 local('roboto-bold'),
+					 url('../fonts/roboto-bold.woff') format('woff'),
+					 url('../fonts/roboto-bold.ttf') format('truetype');
+			}
+
+
+
+		.font-face(Roboto, roboto-bold, normal, bold, NULL, "woff2", "ttf", NULL, "svg");
+
+			@font-face {
+				font-family: "Roboto";
+				font-style: normal;
+				font-weight: bold;
+				src: local('Roboto'),
+					 local('roboto-bold'),
+					 url('../fonts/roboto-bold.woff2') format('woff2'),
+					 url('../fonts/roboto-bold.ttf') format('truetype'),
+					 url('../fonts/roboto-bold.svg#roboto-bold') format('svg');
+			}
+
+
+	In brief and at a glance:
+		.font-face(@font-family-name; @font-name; @font-style; @font-weight; @woff; @woff2; @ttf; @eot; @svg);
+*/
+@font-path: "../fonts";
+.font-face(@font-family-name: @font-name; @font-name; @font-style: normal; @font-weight: normal; @woff: "woff"; @woff2: NULL; @ttf: NULL; @eot: NULL; @svg: NULL) {
+	@font-face {
+		font-family: "@{font-family-name}";
+		font-style: @font-style;
+		font-weight: @font-weight;
+		src+: local('@{font-family-name}'),local('@{font-name}');
+
+		&when(@woff = "woff") or (@woff = woff){
+			src+: url('@{font-path}/@{font-name}.woff') format('woff');
+		}
+		&when(@woff2 = "woff2") or (@woff2 = woff2){
+			src+: url('@{font-path}/@{font-name}.woff2') format('woff2');
+		}
+		&when(@ttf = "ttf") or (@ttf = ttf){
+			src+: url('@{font-path}/@{font-name}.ttf') format('truetype');
+		}
+		&when(@eot = "eot") or (@eot = eot){
+			src+: url('@{font-path}/@{font-name}.eot'),
+				  url('@{font-path}/@{font-name}.eot?#iefix') format('embedded-opentype');
+		}
+		&when(@svg = "svg") or (@svg = svg){
+			src+: url('@{font-path}/@{font-name}.svg#@{font-name}') format('svg');
+		}
+		&when(@woff = "all") or (@woff = all){
+			src+: url('@{font-path}/@{font-name}.woff') format('woff'),
+				  url('@{font-path}/@{font-name}.woff2') format('woff2'),
+				  url('@{font-path}/@{font-name}.ttf') format('truetype'),
+				  url('@{font-path}/@{font-name}.eot'),
+				  url('@{font-path}/@{font-name}.eot?#iefix') format('embedded-opentype'),
+				  url('@{font-path}/@{font-name}.svg#@{font-name}') format('svg');
+		}
+	}
+}
