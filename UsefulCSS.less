@@ -501,3 +501,17 @@
 	-o-backface-visibility:@value;
 	backface-visibility:@value;
 }
+
+/*
+	The perspective property is used to give a 3D-positioned element some perspective.
+	The perspective property defines how far the object is away from the user. So, a lower value will result in a more intensive 3D effect than a higher value.
+	When defining the perspective property for an element, it is the CHILD elements that get the perspective view, NOT the element itself.
+
+	Syntax:
+		perspective: length | none
+*/
+.perspective(@value){
+	-webkit-perspective:@value;
+	-moz-perspective:@value;
+	perspective:@value;
+}
