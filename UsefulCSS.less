@@ -484,3 +484,20 @@
 	-o-transform: matrix(@args);
 	transform: matrix(@args);
 }
+
+/*
+  The backface-visibility property defines whether or not the back face of an element should be visible when facing the user.
+  The back face of an element is a mirror image of the front face being displayed.
+  This property is useful when an element is rotated. It lets you choose if the user should see the back face or not.
+
+  Note: The backface-visibility property is very useful for creating animations like revolving coin or card flipping, where two different images (i.e. front and back side) are blend together to create better 3D rotation effect.
+
+  Syntax:
+    backface-visibility: visible|hidden;
+*/
+.backface-visibility(@value){
+	-webkit-backface-visibility:@value;
+	-moz-backface-visibility:@value;
+	-o-backface-visibility:@value;
+	backface-visibility:@value;
+}
