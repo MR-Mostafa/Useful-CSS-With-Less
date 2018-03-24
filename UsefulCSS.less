@@ -515,3 +515,20 @@
 	-moz-perspective:@value;
 	perspective:@value;
 }
+
+/*
+	The perspective-origin property defines at from which position the user is looking at the 3D-positioned element.
+	When defining the perspective-origin property for an element, it is the CHILD elements that will get the effect, NOT the element itself.
+	Note: This property must be used in conjunction with the perspective property!
+
+	Syntax:
+		perspective-origin: x-axis y-axis
+
+			▸ Possible values for x-axis: left | center | right | length | %
+			▸ Possible values for y-axis: top | center | bottom | length | %
+*/
+.perspective-origin(@value){
+	-webkit-perspective-origin:@value;
+	-moz-perspective-origin:@value;
+	perspective-origin:@value;
+}
