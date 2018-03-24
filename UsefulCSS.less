@@ -23,3 +23,35 @@
 	filter: alpha(opacity=@percent);
 	zoom: 1;  /* Fix for IE7*/
 }
+
+/*
+	The CSS border-radius property defines the radius of an element's corners.
+		▸ If one value is set, this radius applies to all 4 corners.
+		▸ If two values are set, the first applies to <top-left> and <bottom-right> corner, the second applies to <top-right> and <bottom-left> corner.
+		▸ Three values: the first applies to <top-left> corner, and second applies to <top-right> and <bottom-left> corners, and third value applies to <bottom-right> corner
+		▸ Four values apply to the <top-left>, <top-right>, <bottom-right>, <bottom-left> corner in that order.
+
+	Note: If you would like to use elliptical border-radius, set @elliptical.
+
+	Example:
+	  .border-radius(150px 150px 150px 150px, 75px 75px 75px 75px);
+
+	Output:
+	  div.test {
+		-webkit-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;
+		-moz-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;
+		border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;
+	  }
+*/
+.border-radius(@radius; @elliptical:undefined) {
+	& when (@elliptical = undefined) {
+		-webkit-border-radius: @radius;
+		-moz-border-radius: @radius;
+		border-radius: @radius;
+	}
+	& when not(@elliptical = undefined) {
+		-webkit-border-radius: @radius e('/') @elliptical;
+		-moz-border-radius: @radius e('/') @elliptical;
+		border-radius: @radius e('/') @elliptical;
+	}
+}
