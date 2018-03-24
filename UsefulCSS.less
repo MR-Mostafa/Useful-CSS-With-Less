@@ -293,3 +293,16 @@
 	-o-transform-origin:@value;
 	transform-origin:@value;
 }
+
+/*
+	The transform-style property specifies how nested elements are rendered in 3D space.
+	Note: This property must be used together with the transform property.
+
+	Syntax:
+		transform-style: flat | preserve-3d
+*/
+.transform-style(@style){
+	-webkit-transform-style:@style;
+	-moz-transform-style:@style;
+	transform-style:@style;
+}
