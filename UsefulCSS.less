@@ -982,3 +982,17 @@
 		@ruleset();
 	}
 }
+
+/*
+	The user-select property specifies whether the text of an element can be selected.
+	In web browsers, if you double-click on some text it will be selected/highlighted. This property can be used to prevent this.
+
+	Syntax:
+		user-select: auto|none|text|all;
+*/
+.user-select(@select) {
+	-webkit-user-select: @select;
+	-moz-user-select: @select;
+	-ms-user-select: @select;
+	user-select: @select;
+}
