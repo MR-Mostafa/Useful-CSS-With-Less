@@ -468,3 +468,19 @@
 	-o-transform: skewY(unit(@deg, deg));
 	transform: skewY(unit(@deg, deg));
 }
+
+/*
+	The matrix() method combines all the 2D transform methods into one.
+	The matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elements.
+	The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+
+	NOTE: The matrix method take six parameters.
+*/
+.matrix(...){
+	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transform: matrix(@args);
+	-moz-transform: matrix(@args);
+	-ms-transform: matrix(@args);
+	-o-transform: matrix(@args);
+	transform: matrix(@args);
+}
