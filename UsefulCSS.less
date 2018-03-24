@@ -229,6 +229,9 @@
 		font-family: "@{font-family-name}";
 		font-style: @font-style;
 		font-weight: @font-weight;
+		&when(@eot = "eot") or (@eot = eot) {
+			src: url('@{font-path}/@{font-name}.eot');
+		}
 		src+: local('@{font-family-name}'),local('@{font-name}');
 
 		&when(@woff = "woff") or (@woff = woff){
@@ -241,8 +244,7 @@
 			src+: url('@{font-path}/@{font-name}.ttf') format('truetype');
 		}
 		&when(@eot = "eot") or (@eot = eot){
-			src+: url('@{font-path}/@{font-name}.eot'),
-				  url('@{font-path}/@{font-name}.eot?#iefix') format('embedded-opentype');
+			src+: url('@{font-path}/@{font-name}.eot?#iefix') format('embedded-opentype');
 		}
 		&when(@svg = "svg") or (@svg = svg){
 			src+: url('@{font-path}/@{font-name}.svg#@{font-name}') format('svg');
