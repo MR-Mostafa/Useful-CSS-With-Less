@@ -996,3 +996,25 @@
 	-ms-user-select: @select;
 	user-select: @select;
 }
+
+/*
+	The ::selection CSS pseudo-element applies styles to the portion of a document that has been highlighted by the user (such as with the mouse).
+
+	Allowable properties:
+		▸ color
+		▸ background-color
+		▸ cursor
+		▸ caret-color
+		▸ outline
+		▸ text-decoration
+		▸ text-emphasis-color
+		▸ text-shadow
+*/
+.selection(@ruleset) {
+	::-moz-selection {
+		@ruleset();
+	}
+	::selection {
+		@ruleset();
+	}
+}
