@@ -229,7 +229,7 @@
 		font-family: "@{font-family-name}";
 		font-style: @font-style;
 		font-weight: @font-weight;
-		&when(@eot = "eot") or (@eot = eot) {
+		&when(@eot = "eot") or (@eot = eot) or (@woff = "all") or (@woff = all) {
 			src: url('@{font-path}/@{font-name}.eot');
 		}
 		src+: local('@{font-family-name}'),local('@{font-name}');
@@ -253,7 +253,6 @@
 			src+: url('@{font-path}/@{font-name}.woff') format('woff'),
 				  url('@{font-path}/@{font-name}.woff2') format('woff2'),
 				  url('@{font-path}/@{font-name}.ttf') format('truetype'),
-				  url('@{font-path}/@{font-name}.eot'),
 				  url('@{font-path}/@{font-name}.eot?#iefix') format('embedded-opentype'),
 				  url('@{font-path}/@{font-name}.svg#@{font-name}') format('svg');
 		}
