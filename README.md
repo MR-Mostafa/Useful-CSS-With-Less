@@ -1,7 +1,9 @@
 # Useful CSS With Less Mixins
 `Useful CSS` is a snippets of reusable CSS by less mixins to develop faster and keep code readable.
 
-## For more information, [Click this link](http://usefulcss.ir/)
+___
+## For more information: [http://usefulcss.ir](http://usefulcss.ir/)
+___
 
 ## How to Use
 Download `UsefulCSS.less` OR `UsefulCSS.min.less` and then copy the following code:
@@ -12,6 +14,7 @@ Download `UsefulCSS.less` OR `UsefulCSS.min.less` and then copy the following co
 /* OR use it @import from your less file */
 @import "../UsefulCSS.min.less";
 ```
+___
 
 ## How it works:
 As a rule, you can use the CSS properties you would expect just by adding a `.` to start them and putting arguments afterwards.
@@ -32,6 +35,7 @@ div.radius {
 	border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;
 }
 ```
+___
 
 ## Mixin Names:
 | ?CSS property & Value |
@@ -93,10 +97,14 @@ div.radius {
 | .placeholder(@ruleset); |
 | .selection(@ruleset); |
 
-**For more information, visit [link](http://usefulcss.ir/)**
+**For more information, visit [http://usefulcss.ir](http://usefulcss.ir/)**
+
+___
 
 ## Contributing:
 There are no special conditions, we look forward to working with you.
+
+___
 
 ## License
 `Useful CSS` released under the [MIT License](https://opensource.org/licenses/MIT)
