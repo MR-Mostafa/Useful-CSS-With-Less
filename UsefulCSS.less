@@ -1,6 +1,9 @@
 /*=================================================================================
  * Useful CSS With Less
+ * by Mostafa Rahmati
+ * https://github.com/MR-Mostafa
  *
+ * Code released under the MIT License
  *================================================================================= */
 
 
@@ -267,7 +270,7 @@
 
 	When you’re transforming an object with CSS, you have four values to set: <rotate>, <scale>, <skew> and <translate>.
 */
-.transform (@rotate: 0deg, @scale: 0, @skew: 0deg, @translate: 0px) {
+.transform (@rotate: 0deg; @scale: 1; @skew: 0deg; @translate: 0px) {
 	-webkit-transform: rotate(unit(@rotate, deg)) scale(@scale) skew(unit(@skew, deg)) translate(@translate);
 	-moz-transform: rotate(unit(@rotate, deg)) scale(@scale) skew(unit(@skew, deg)) translate(@translate);
 	-o-transform: rotate(unit(@rotate, deg)) scale(@scale) skew(unit(@skew, deg)) translate(@translate);
@@ -312,7 +315,7 @@
 	The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis).
 	The translate3d() CSS function repositions an element in 3D space
 */
-.translate (@x:0; @y:0) {
+.translate (@x:0; @y:undefined) {
 	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
 	-webkit-transform:translate(@args);
 	-moz-transform: translate(@args);
@@ -405,7 +408,7 @@
 	The scale function is specified with either one or two values, which represent the amount of scaling to be applied in each direction.
 	The scale3d CSS function defines a transformation that resizes an element in 3D space.
 */
-.scale (@x:0; @y:@x) {
+.scale (@x:0; @y:1) {
 	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
 	-webkit-transform: scale(@args);
 	-moz-transform: scale(@args);
@@ -475,7 +478,7 @@
 	The matrix() method take six parameters, containing mathematic functions, which allows you to rotate, scale, move (translate), and skew elements.
 	The parameters are as follow: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
 
-	NOTE: The matrix method take six parameters.
+	NOTE: The matrix method should take six parameters.
 */
 .matrix(...){
 	@args: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
@@ -721,7 +724,7 @@
 	   ▸ orientation (is the tablet/phone in landscape or portrait mode?)
 	   ▸ resolution
 
-	Yuo can use:
+	You can use:
 		.media-max() 		==> For special media size that needs you choose max-width.
 		.media-min() 		==> For special media size that needs you choose min-width.
 
@@ -736,7 +739,7 @@
 		.desktop-bs() 		==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
 		.desktop-wide-bs() 	==> To make coding easier, for media size from the BootStrap V4.0 framework have been used.
 
-    NOTE: IF you need bootstrap V3 media with mixin less, visit : http://simbo.github.io/2014/03/less-media-query-mixins.html
+    NOTE: IF you need bootstrap V3 media queries with less mixins, visit : http://simbo.github.io/2014/03/less-media-query-mixins.html
 
 	Examples:
 		.media-max(650px,{
@@ -951,34 +954,34 @@
 */
 .placeholder(@ruleset){
 	/* WebKit, Blink, Edge*/
-	::-webkit-input-placeholder {
+	&::-webkit-input-placeholder {
 		@ruleset();
 	}
 
 	/* Mozilla Firefox 4 to 18*/
-	:-moz-placeholder {
+	&:-moz-placeholder {
 		opacity:1;
 		@ruleset();
 	}
 
 	/* Mozilla Firefox 19+*/
-	::-moz-placeholder {
+	&::-moz-placeholder {
 		opacity:1;
 		@ruleset();
 	}
 
 	/* Internet Explorer 10-11*/
-	:-ms-input-placeholder {
+	&:-ms-input-placeholder {
 		@ruleset();
 	}
 
 	/* Microsoft Edge*/
-	::-ms-input-placeholder {
+	&::-ms-input-placeholder {
 		@ruleset();
 	}
 
 	/* Chrome, Firefox, Opera, Safari 10.1+*/
-	::placeholder {
+	&::placeholder {
 		@ruleset();
 	}
 }
@@ -1011,10 +1014,10 @@
 		▸ text-shadow
 */
 .selection(@ruleset) {
-	::-moz-selection {
+	&::-moz-selection {
 		@ruleset();
 	}
-	::selection {
+	&::selection {
 		@ruleset();
 	}
 }
