@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="./css/materialize.min.css"/>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="description" content="Snippets of reusable CSS by less mixins to develop faster and keep code readable">
+	<title>Useful CSS With Less</title>
+</head>
+<body>
+
+<header>
+	<div class="navbar-fixed">
+		<nav class="blue-grey darken-3">
+			<div class="main-padding nav-wrapper">
+				<h1 class="brand-logo">
+					<a class="grey-text text-lighten-1" href="http://usefulcss.ir/">Useful CSS</a>
+				</h1>
+
+				<ul class="right hide-on-med-and-down">
+					<li><a href="https://github.com/MR-Mostafa/Useful-CSS-With-Less">GitHub</a></li>
+				</ul>
+
+				<ul id="nav-mobile" class="sidenav blue-grey lighten-5">
+					<li><a href="https://github.com/MR-Mostafa/Useful-CSS-With-Less">GitHub</a></li>
+				</ul>
+				<a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			</div><!--///// container nav-wrapper /////-->
+		</nav>
+	</div><!--///// navbar-fixed /////-->
+
+	<section class="about z-depth-2">
+		<div class="main-padding">
+			<h2 class="grey-text text-lighten-2">Useful CSS With Less Mixins</h2>
+			<p>Snippets of reusable CSS by less mixins to develop faster and keep code readable</p>
+		</div>
+	</section><!--///// about /////-->
+</header>
+
+<main class="main-padding">
+	<section class="use z-depth-1">
+		<h3>How to Use:</h3>
+		<div>
+			<p>Download the <a target="_blank" href="https://github.com/MR-Mostafa/Useful-CSS-With-Less/blob/master/UsefulCSS.less"><span class="html-tag">UsefulCSS.less</span></a> OR <a target="_blank" href="https://github.com/MR-Mostafa/Useful-CSS-With-Less/blob/master/UsefulCSS.min.less"><span class="html-tag">UsefulCSS.min.less</span></a> and then copy the following code at the right place given here:</p>
+			<pre><code class="html"><span class="hljs-comment">/* place it into your HTML &#x3C;head&#x3E; tag */</span><br>&lt;link rel=&quot;stylesheet/less&quot; href=&quot;UsefulCSS.min.less&quot;&gt;<br><br><span class="hljs-comment">/* OR use @import in your less file */</span><br><span class="hljs-keyword">@import</span><span class="hljs-string"> &quot;../UsefulCSS.min.less&quot;</span>;</code></pre>
+			<br>
+			<p class="title">Note:</p>
+			<p>Load the <span class="html-tag">less.min.js</span> into your HTML <span class="html-tag">&#x3C;head&#x3E;</span> tag right before <span class="html-tag">UsefulCSS.less</span> to compile automatically the less file to CSS code, OR manually compile it with appropriate less compilers.</p>
+		</div>
+	</section><!--///// use /////-->
+
+	<section class="works z-depth-1">
+		<h3>How it works:</h3>
+		<div>
+			<p>As a rule, you can use the CSS properties you would expect just by adding a <span class="html-tag">.</span> to start them and putting arguments afterwards.</p>
+			<p>Whatever... let's say you want a elliptical border radius for an element, here you go:</p>
+			<br>
+			<p class="title">Example:</p>
+			<pre><code class="less">div.radius{<br>&#x9;.border-radius(150px 150px 150px 150px, 75px 75px 75px 75px);<br>}</code></pre>
+			<br>
+			<p class="title">Output:</p>
+			<pre><code class="css">div.radius {<br>&#x9;-webkit-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>&#x9;-moz-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>&#x9;border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>}</code></pre>
+		</div>
+	</section><!--///// works /////-->
+
+	<section class="include">
+		<h3>What's included:</h3>
+		<table class="responsive-table striped">
+			<thead>
+				<tr>
+					<th>CSS property & Value</th>
+					<th>Example / Output</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr>
+					<td>.opacity(<span class="green-text text-darken-1">@opacity</span>);</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.opacity(0.7);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	opacity: 0.7;<br>	filter: alpha(opacity=70);<br>	zoom: 1;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.border-radius(<span class="green-text text-darken-1">@radius</span>; <span class="green-text text-darken-1">@elliptical</span>);<br><br>
+						<span class="strong">Note:</span> If would you like to use elliptical border-radius, set @elliptical. (This is an optional variable)
+					</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.border-radius(7px);<br>}<br><br><span class="hljs-comment">/* elliptical border-radius */</span><br>div.test{<br>	.border-radius(150px 150px 150px 150px, 75px 75px 75px 75px);<br>}<br></code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-border-radius: 7px;<br>	-moz-border-radius: 7px;<br>	border-radius: 7px;<br>}<br><br><span class="hljs-comment">/* elliptical border-radius */</span><br>div.test {<br>	-webkit-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>	-moz-border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>	border-radius: 150px 150px 150px 150px / 75px 75px 75px 75px;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.border-image(<span class="green-text text-darken-1">...</span>);<br><br>
+						<span class="strong">Note:</span> In less, use <span class="html-tag">...</span> for mixin to take a variable number of arguments.
+					</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.border-image(url(border.png) 30% stretch);<br>}</code></pre>
+						<pre><code class="css">div.test {<br>	-webkit-border-image: url(border.png) 30% stretch;<br>	-moz-border-image: url(border.png) 30% stretch;<br>	-o-border-image: url(border.png) 30% stretch;<br>	border-image: url(border.png) 30% stretch;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.box-sizing(<span class="green-text text-darken-1">@value</span>);<br><br>
+					</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.box-sizing(border-box);<br>}</code></pre>
+						<pre><code class="css">div.test {<br>	-webkit-box-sizing: border-box;<br>	-moz-box-sizing: border-box;<br>	box-sizing: border-box;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.text-shadow(<span class="green-text text-darken-1">...</span>);<br><br>
+						<span class="strong">Note:</span> In less, use <span class="html-tag">...</span> for mixin to take a variable number of arguments.<br><br>
+						<span class="strong">Note2:</span> If would you like to use more shadows to a text, Don't forget to use semicolon at the end of mixin.<br>Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+					</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.text-shadow(1px 0 2px #FF0000);<br>}<br><br><span class="hljs-comment">/* use more shadows to a text */</span><br>div.test{<br>	.text-shadow(0 0 3px #FF0000, 0 0 5px red;);<br><span class="hljs-comment">/*  						 ↧ <br>				  This semicolon is important!<br>*/</span><br>}</code></pre>
+						<pre><code class="css">div.test {<br>	text-shadow: 1px 0 2px #FF0000;<br>}<br><br><span class="hljs-comment">/* use more shadows to a text */</span><br>div.test{<br>	text-shadow: 0 0 3px #FF0000, 0 0 5px red;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.box-shadow(<span class="green-text text-darken-1">...</span>);<br><br>
+						<span class="strong">Note:</span> In less, use <span class="html-tag">...</span> for mixin to take a variable number of arguments.<br><br>
+						<span class="strong">Note2:</span> If would you like to use more shadows to an element, Don't forget to use semicolon at the end of mixin.<br>Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+					</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.box-shadow(5px 5px 8px #eee);<br>}<br><br><span class="hljs-comment">/* use more shadows to an element */</span><br>div.test{<br>	.box-shadow(5px 5px 8px blue, 15px 15px 8px green;);<br><span class="hljs-comment">/*  							 ↧ <br>				 	    This semicolon is important!<br>*/</span><br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-box-shadow: 5px 5px 8px #eee;<br>	-moz-box-shadow: 5px 5px 8px #eee;<br>	box-shadow: 5px 5px 8px #eee;<br>}<br><br><span class="hljs-comment">/* use more shadows to an element */</span><br>div.test {<br>	-webkit-box-shadow: 5px 5px 8px blue, 15px 15px 8px green;<br>	-moz-box-shadow: 5px 5px 8px blue, 15px 15px 8px green;<br>	box-shadow: 5px 5px 8px blue, 15px 15px 8px green;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.font-face(<span class="green-text text-darken-1">@font-family-name</span>; <span class="green-text text-darken-1">@font-name</span>; <span class="green-text text-darken-1">@font-style</span>; <span class="green-text text-darken-1">@font-weight</span>; <span class="green-text text-darken-1">@woff</span>; <span class="green-text text-darken-1">@woff2</span>; <span class="green-text text-darken-1">@ttf</span>; <span class="green-text text-darken-1">@eot</span>; <span class="green-text text-darken-1">@svg</span>);<br><br>
+						<span class="strong">Explain the variables:</span>
+						<ul>
+							<li><span class="html-tag">@font-path</span> Enter your font location.<br>Default: "../fonts/@{font-family-name}";</li>
+							<li><span class="html-tag">@font-family-name</span> Use this variable for the font-family property. [e.g: roboto]</li>
+							<li><span class="html-tag">@font-name</span> Write the font name without the suffix. [e.g: roboto-bold]</li>
+							<li><span class="html-tag">@font-style</span> normal | italic | oblique.<br>Default: normal;</li>
+							<li><span class="html-tag">@font-weight</span>  normal | bold | bolder | lighter | number[e.g: 100,200,300,...,900].<br>Default: normal;</li>
+							<li><span class="html-tag">@woff</span> Set value "woff" to show woff font. IF set this value "all", shows all font suffix. e.g: woff,woff2,ttf and etc. <br>Default: woff;</li>
+							<li><span class="html-tag">@woff2</span> Set value "woff2" to show woff2 font. IF you want to not show "woff2", set NULL;<br>Default: NULL;</li>
+							<li><span class="html-tag">@ttf</span> Set value "ttf" to show ttf font. IF you want to not show "ttf", set NULL;<br>Default: NULL;</li>
+							<li><span class="html-tag">@eot</span> Set value "eot" to show eot font. IF you want to not show "eot", set NULL;<br>Default: NULL;</li>
+							<li><span class="html-tag">@svg</span> Set value "svg" to show svg font. IF you want to not show "svg", set NULL;<br>Default: NULL;</li>
+						</ul><br>
+						<span class="strong">Note:</span> <span class="html-tag">@font-family-name</span> variable is required and another variables is optional.<br><br><br>
+
+						<span class="strong">Fonts suffix and browsers support:</span>
+						<ul>
+							<li><span class="html-tag">*.woff</span> Pretty Modern Browsers [FF3.6+, IE9, Chrome6+, Saf5.1+]</li>
+							<li><span class="html-tag">*.woff2</span>  Super Modern Browsers [FF39+,Chrome36+, Opera24+]</li>
+							<li><span class="html-tag">*.ttf</span> Safari, Android, iOS</li>
+							<li><span class="html-tag">*.eot</span>  IE9 Compat Modes</li>
+							<li><span class="html-tag">*.eot?#iefix</span> Only IE6-8</li>
+							<li><span class="html-tag">*.svg</span>  Old iOS</li>
+						</ul>
+					</td>
+					<td>
+						<pre><code class="less"><span class="hljs-comment">/* Example 1: */</span><br>.font-face(roboto);<br><br><span class="hljs-comment">/* Example 2: */</span><br>.font-face(roboto, roboto-regular);<br><br><span class="hljs-comment">/* Example 3: */</span><br>.font-face(roboto, roboto-bold, normal, bold);<br><br><span class="hljs-comment">/* Example 4: */</span><br>.font-face(roboto, roboto-bold, normal, bold, woff, woff2, NULL);<br><br><span class="hljs-comment">/* Example 5: */</span><br>.font-face(roboto, roboto-bold, normal, bold, NULL, woff2, ttf);<br><br><span class="hljs-comment">/* Example 6: */</span><br>.font-face(roboto, roboto-bold, normal, bold, NULL, woff2, NULL, eot);<br><br><span class="hljs-comment">/* Example 7: */</span><br>.font-face(roboto, roboto-bold, normal, bold, all);</code></pre>
+
+						<pre><code class="css long-code"><span class="hljs-comment">/* Example 1: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: normal;<br>	src: local('roboto'),<br>	     local('roboto'),<br>	     ur('../fonts/roboto/roboto.woff') format('woff');<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: normal;<br>	src: local('roboto'),<br>	     local('roboto-regular'),<br>	     url('../fonts/roboto/roboto-regular.woff') format('woff');<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: bold;<br>	src: local('roboto'),<br>	     local('roboto-bold'),<br>	     url('../fonts/roboto/roboto-bold.woff') format('woff');<br>}<br><br><span class="hljs-comment">/* Example 4: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: bold;<br>	src: local('roboto'),<br>	     local('roboto-bold'),<br>	     url('../fonts/roboto/roboto-bold.woff') format('woff'),<br>	     url('../fonts/roboto/roboto-bold.woff2') format('woff2');<br>}<br><br><span class="hljs-comment">/* Example 5: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: bold;<br>	src: local('roboto'),<br>	     local('roboto-bold'),<br>	     url('../fonts/roboto/roboto-bold.woff2') format('woff2'),<br>	     url('../fonts/roboto/roboto-bold.ttf') format('truetype');<br>}<br><br><span class="hljs-comment">/* Example 6: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: bold;<br>	src: url('../fonts/roboto/roboto-bold.eot');<br>	src: local('roboto'),<br>	     local('roboto-bold'),<br>	     url('../fonts/roboto/roboto-bold.woff2') format('woff2'),<br>	     url('../fonts/roboto/roboto-bold.eot?#iefix') format('embedded-opentype');<br>}<br><br><span class="hljs-comment">/* Example 7: */</span><br>@font-face {<br>	font-family: "roboto";<br>	font-style: normal;<br>	font-weight: bold;<br>	src: url('../fonts/roboto/roboto-bold.eot');<br>	src: local('roboto'),<br>	     local('roboto-bold'),<br>	     url('../fonts/roboto/roboto-bold.woff') format('woff'),<br>	     url('../fonts/roboto/roboto-bold.woff2') format('woff2'),<br>	     url('../fonts/roboto/roboto-bold.ttf') format('truetype'),<br>	     url('../fonts/roboto/roboto-bold.eot?#iefix') format('embedded-opentype'),<br>	     url('../fonts/roboto/roboto-bold.svg#roboto-bold') format('svg');<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>.transform(<span class="green-text text-darken-1">@rotate</span>; <span class="green-text text-darken-1">@scale</span>; <span class="green-text text-darken-1">@skew</span>; <span class="green-text text-darken-1">@translate</span>);</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.transform (@rotate: 20deg, @scale: 2, @skew: 0deg, @translate: 100px);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-transform: rotate(20deg) scale(2) skew(0deg) translate(100px);<br>	-moz-transform: rotate(20deg) scale(1) skew(0deg) translate(100px);<br>	-o-transform: rotate(20deg) scale(1) skew(0deg) translate(100px);<br>	-ms-transform: rotate(20deg) scale(1) skew(0deg) translate(100px);<br>	transform: rotate(20deg) scale(1) skew(0deg) translate(100px);<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>.transform-origin(<span class="green-text text-darken-1">@value</span>);</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.transform-origin(20% 40%);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-transform-origin: 20% 40%;<br>	-moz-transform-origin: 20% 40%;<br>	-o-transform-origin: 20% 40%;<br>	transform-origin: 20% 40%;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>.transform-style(<span class="green-text text-darken-1">@style</span>);</td>
+					<td>
+						<pre><code class="less">div.test{<br>	.transform-style(preserve-3d);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-transform-style: preserve-3d;<br>	-moz-transform-style: preserve-3d;<br>	transform-style: preserve-3d;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.translate(<span class="green-text text-darken-1">@x</span>; <span class="green-text text-darken-1">@y</span>);<br><br>
+
+						.translate3d(<span class="green-text text-darken-1">@x</span>; <span class="green-text text-darken-1">@y</span>; <span class="green-text text-darken-1">@z</span>);<br><br>
+
+						.translateX(<span class="green-text text-darken-1">@x</span>);<br><br>
+
+						.translateY(<span class="green-text text-darken-1">@y</span>);<br><br>
+
+						.translateZ(<span class="green-text text-darken-1">@z</span>);<br><br>
+
+					</td>
+
+
+					<td>
+						<pre><code class="less"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	.translate (20px);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	.translate (20px, 30px);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	.translate3d (42px, -62px, -135px);<br>}<br><br><span class="hljs-comment">/* Example 4: */</span><br>div.test{<br>	.translateZ (7px);<br>}</code></pre>
+						<pre><code class="css"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	-webkit-transform: translate(20px, 0);<br>	-moz-transform: translate(20px, 0);<br>	-ms-transform: translate(20px, 0);<br>	-o-transform: translate(20px, 0);<br>	transform: translate(20px, 0);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	-webkit-transform: translate(20px, 30px);<br>	-moz-transform: translate(20px, 30px);<br>	-ms-transform: translate(20px, 30px);<br>	-o-transform: translate(20px, 30px);<br>	transform: translate(20px, 30px);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	-webkit-transform: translate3d(42px, -62px, -135px);<br>	-moz-transform: translate3d(42px, -62px, -135px);<br>	-ms-transform: translate3d(42px, -62px, -135px);<br>	-o-transform: translate3d(42px, -62px, -135px);<br>	transform: translate3d(42px, -62px, -135px);<br>}<br><br><span class="hljs-comment">/* Example 4: */</span><br>div.test{<br>	-webkit-transform: translateZ(7px);<br>	-moz-transform: translateZ(7px);<br>	-ms-transform: translateZ(7px);<br>	-o-transform: translateZ(7px);<br>	transform: translateZ(7px);<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.rotate(<span class="green-text text-darken-1">@deg</span>);<br><br>
+
+						.rotate3d(<span class="green-text text-darken-1">@x</span>; <span class="green-text text-darken-1">@y</span>; <span class="green-text text-darken-1">@z</span>; <span class="green-text text-darken-1">@deg</span>);<br><br>
+
+						.rotateX(<span class="green-text text-darken-1">@deg</span>);<br><br>
+
+						.rotateY(<span class="green-text text-darken-1">@deg</span>);<br><br>
+
+						.rotateZ(<span class="green-text text-darken-1">@deg</span>);<br><br>
+
+					</td>
+
+					<td>
+						<pre><code class="less"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	.rotate (20deg);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	.rotate3d (1, 1, 1, 45deg);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	.rotateY (42deg);<br>}</code></pre>
+						<pre><code class="css"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	-webkit-transform: rotate(20deg);<br>	-moz-transform: rotate(20deg);<br>	-ms-transform: rotate(20deg);<br>	-o-transform: rotate(20deg);<br>	transform: rotate(20deg);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	-webkit-transform: rotate3d(1, 1, 1, 45deg);<br>	-moz-transform: rotate3d(1, 1, 1, 45deg);<br>	-ms-transform: rotate3d(1, 1, 1, 45deg);<br>	-o-transform: rotate3d(1, 1, 1, 45deg);<br>	transform: rotate3d(1, 1, 1, 45deg);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	-webkit-transform: rotateY(45deg);<br>	-moz-transform: rotateY(45deg);<br>	-ms-transform: rotateY(45deg);<br>	-o-transform: rotateY(45deg);<br>	transform: rotateY(45deg);<br>}<br><br></code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.scale(<span class="green-text text-darken-1">@x</span>; <span class="green-text text-darken-1">@y</span>);<br><br>
+
+						.scale3d(<span class="green-text text-darken-1">@x</span>; <span class="green-text text-darken-1">@y</span>; <span class="green-text text-darken-1">@z</span>);<br><br>
+
+						.scaleX(<span class="green-text text-darken-1">@x</span>);<br><br>
+
+						.scaleY(<span class="green-text text-darken-1">@y</span>);<br><br>
+
+						.scaleZ(<span class="green-text text-darken-1">@z</span>);
+
+					</td>
+
+					<td>
+						<pre><code class="less"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	.scale (2,3);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	.scale3d (0.5, 1, 1.7);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	.scaleX (2.5);<br>}</code></pre>
+						<pre><code class="css"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	-webkit-transform: scale(2, 3);<br>	-moz-transform: scale(2, 3);<br>	-o-transform: scale(2, 3);<br>	transform: scale(2, 3);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	-webkit-transform: scale3d(0.5, 1, 1.7);<br>	-moz-transform: scale3d(0.5, 1, 1.7);<br>	-ms-transform: scale3d(0.5, 1, 1.7);<br>	-o-transform: scale3d(0.5, 1, 1.7);<br>	transform: scale3d(0.5, 1, 1.7);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	-webkit-transform: scaleX(2.5);<br>	-moz-transform: scaleX(2.5);<br>	-ms-transform: scaleX(2.5);<br>	-o-transform: scaleX(2.5);<br>	transform: scaleX(2.5);<br>}</code></pre>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						.skew(<span class="green-text text-darken-1">@deg</span>; <span class="green-text text-darken-1">@deg2</span>);<br><br>
+
+						.skewX(<span class="green-text text-darken-1">@deg</span>);<br><br>
+
+						.skewY(<span class="green-text text-darken-1">@deg</span>);
+
+					</td>
+
+					<td>
+						<pre><code class="less"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	.skew (10deg,15deg);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	.skewX (20deg);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	.skewY (10deg);<br>}</code></pre>
+						<pre><code class="css"><span class="hljs-comment">/* Example 1: */</span><br>div.test{<br>	-webkit-transform: skew(10deg, 15deg);<br>	-moz-transform: skew(10deg, 15deg);<br>	-ms-transform: skew(10deg, 15deg);<br>	-o-transform: skew(10deg, 15deg);<br>	transform: skew(10deg, 15deg);<br>}<br><br><span class="hljs-comment">/* Example 2: */</span><br>div.test{<br>	-webkit-transform: skewX(20deg);<br>	-moz-transform: skewX(20deg);<br>	-ms-transform: skewX(20deg);<br>	transform: skewX(20deg);<br>}<br><br><span class="hljs-comment">/* Example 3: */</span><br>div.test{<br>	-webkit-transform: skewY(10deg);<br>	-moz-transform: skewY(10deg);<br>	-ms-transform: skewY(10deg);<br>	transform: skewY(10deg);<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.matrix(<span class="green-text text-darken-1">...</span>);<br><br>
+						<span class="strong">Note:</span> In less, use <span class="html-tag">...</span> for mixin to take a variable number of arguments.<br><br>
+						<span class="strong">Note2:</span> The matrix method should take six parameters.<br>matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.matrix (0.586,0.8,-0.8,0.586,20,0);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-transform: matrix(0.586, 0.8, -0.8, 0.586, 20, 0);<br>	-moz-transform: matrix(0.586, 0.8, -0.8, 0.586, 20, 0);<br>	-ms-transform: matrix(0.586, 0.8, -0.8, 0.586, 20, 0);<br>	-o-transform: matrix(0.586, 0.8, -0.8, 0.586, 20, 0);<br>	transform: matrix(0.586, 0.8, -0.8, 0.586, 20, 0);<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.backface-visibility(<span class="green-text text-darken-1">@value</span>);<br><br>
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.backface-visibility (hidden);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-backface-visibility: hidden;<br>	-moz-backface-visibility: hidden;<br>	-o-backface-visibility: hidden;<br>	backface-visibility: hidden;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.perspective(<span class="green-text text-darken-1">@value</span>);
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.perspective (400px);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-perspective: 400px;<br>	-moz-perspective: 400px;<br>	perspective: 400px;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.perspective-origin(<span class="green-text text-darken-1">@value</span>);
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.perspective-origin (bottom right);<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-perspective-origin: bottom right;<br>	-moz-perspective-origin: bottom right;<br>	perspective-origin: bottom right;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.keyframes(<span class="green-text text-darken-1">@name</span>; <span class="green-text text-darken-1">@arguments</span>);
+					</td>
+
+					<td>
+						<pre><code class="less">.keyframes(mymove,{<br>	<span class="fixed-color">0%</span>   {top: 0px;}<br>	50%  {top: 200px;}<br>	100% {top: 0px;}<br>});</code></pre>
+						<pre><code class="css">@-webkit-keyframes mymove {<br>	0% {top: 0px;}<br>	50% {top: 200px;}<br>	100% {top: 0px;}<br>}<br>@-moz-keyframes mymove {<br>	0% {top: 0px;}<br>	50% {top: 200px;}<br>	100% {top: 0px;}<br>}<br>@-o-keyframes mymove {<br>	0% {top: 0px;}<br>	50% {top: 200px;}<br>	100% {top: 0px;}<br>}<br>@keyframes mymove {<br>	0% {top: 0px;}<br>	50% {top: 200px;}<br>	100% {top: 0px;}<br>}<br></code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.animation(<span class="green-text text-darken-1">@arguments</span>);<br><br>
+						.animation-name(<span class="green-text text-darken-1">@name</span>);<br><br>
+						.animation-duration(<span class="green-text text-darken-1">@time</span>);<br><br>
+						.animation-timing-function(<span class="green-text text-darken-1">@args</span>);<br><br>
+						.animation-delay(<span class="green-text text-darken-1">@delay</span>);<br><br>
+						.animation-iteration-count(<span class="green-text text-darken-1">@count</span>);<br><br>
+						.animation-direction(<span class="green-text text-darken-1">@direction</span>);<br><br>
+						.animation-fill-mode(<span class="green-text text-darken-1">@mode</span>);<br><br>
+						.animation-play-state(<span class="green-text text-darken-1">@args</span>);<br><br>
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.animation(mymove 5s infinite);<br>}<br><br>div.test{<br>	.animation-name(mymove);<br>}<br><br>div.test{<br>	.animation-duration(2s);<br>}<br><br>div.test{<br>	.animation-timing-function(ease-in-out);<br>}<br><br>div.test{<br>	.animation-delay(1s);<br>}<br><br>div.test{<br>	.animation-iteration-count(3);<br>}<br><br>div.test{<br>	.animation-direction(alternate);<br>}<br><br>div.test{<br>	.animation-fill-mode(forwards);<br>}<br><br>div.test{<br>	.animation-play-state(paused);<br>}<br><br></code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-animation: mymove 5s infinite;<br>	-moz-animation: mymove 5s infinite;<br>	-o-animation: mymove 5s infinite;<br>	animation: mymove 5s infinite;<br>}<br><br>div.test{<br>	-webkit-animation-name: mymove;<br>	-moz-animation-name: mymove;<br>	-o-animation-name: mymove;<br>	animation-name: mymove;<br>}<br><br>div.test{<br>	-webkit-animation-duration: 2s;<br>	-moz-animation-duration: 2s;<br>	-o-animation-duration: 2s;<br>	animation-duration: 2s;<br>}<br><br>div.test{<br>	-webkit-animation-timing-function: ease-in-out;<br>	-moz-animation-timing-function: ease-in-out;<br>	-o-animation-timing-function: ease-in-out;<br>	animation-timing-function: ease-in-out;<br>}<br><br>div.test{<br>	-webkit-animation-delay: 1s;<br>	-moz-animation-delay: 1s;<br>	-o-animation-delay: 1s;<br>	animation-delay: 1s;<br>}<br><br>div.test{<br>	-webkit-animation-iteration-count: 3;<br>	-moz-animation-iteration-count: 3;<br>	-o-animation-iteration-count: 3;<br>	animation-iteration-count: 3;<br>}<br><br>div.test{<br>	-webkit-animation-direction: alternate;<br>	-moz-animation-direction: alternate;<br>	-o-animation-direction: alternate;<br>	animation-direction: alternate;<br>}<br><br>div.test{<br>	-webkit-animation-fill-mode: forwards;<br>	-moz-animation-fill-mode: forwards;<br>	-o-animation-fill-mode: forwards;<br>	animation-fill-mode: forwards;<br>}<br><br>div.test{<br>	-webkit-animation-play-state: paused;<br>	-moz-animation-play-state: paused;<br>	-o-animation-play-state: paused;<br>	animation-play-state: paused;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<span class="strong">Custom Media Queries:</span>
+						&nbsp;&nbsp;&nbsp;.media-max(<span class="green-text text-darken-1">@maxWidth</span>; <span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.media-min(<span class="green-text text-darken-1">@minWidth</span>; <span class="green-text text-darken-1">@rules</span>);<br><br>
+
+						<span class="strong">MaterializeCSS Media Queries:</span>
+						&nbsp;&nbsp;&nbsp;.mobile(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.tablet(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.desktop(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.desktop-wide(<span class="green-text text-darken-1">@rules</span>);<br><br>
+
+						<span class="strong">Bootstrap (V4) Media Queries:</span>
+						&nbsp;&nbsp;&nbsp;.mobile-small-bs(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.mobile-bs(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.tablet-bs(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.desktop-bs(<span class="green-text text-darken-1">@rules</span>);<br>
+						&nbsp;&nbsp;&nbsp;.desktop-wide-bs(<span class="green-text text-darken-1">@rules</span>);<br><br><br><br>
+
+						<span class="strong">Explain the mixin:</span>
+						<ul>
+							<li><span class="html-tag">.media-max()</span> For special media size that needs you choose max-width.</li>
+							<li><span class="html-tag">.media-min()</span> For special media size that needs you choose min-width.</li>
+							<li><span class="html-tag">.mobile()</span> To make coding easier, for media size from the MaterializeCSS framework have been used.<br><span class="strong">[max-width: 600px]</span></li>
+							<li><span class="html-tag">.tablet()</span> To make coding easier, for media size from the MaterializeCSS framework have been used.<br><span class="strong">[min-width: 600px and max-width: 991.99px]</span></li>
+							<li><span class="html-tag">.desktop()</span> To make coding easier, for media size from the MaterializeCSS framework have been used.<br><span class="strong">[min-width: 992px and max-width: 1199.99px]</span></li>
+							<li><span class="html-tag">.desktop-wide()</span> To make coding easier, for media size from the MaterializeCSS framework have been used<br><span class="strong">[min-width: 1200px]</span></li>
+							<li><span class="html-tag">.mobile-small-bs()</span> To make coding easier, for media size from the BootStrap V4.0 framework have been used<br><span class="strong">[max-width: 576.99px]</span></li>
+							<li><span class="html-tag">.mobile-bs()</span> To make coding easier, for media size from the BootStrap V4.0 framework have been used.<br><span class="strong">[min-width: 577px and max-width: 767.99px]</span></li>
+							<li><span class="html-tag">.tablet-bs()</span> To make coding easier, for media size from the BootStrap V4.0 framework have been used.<br><span class="strong">[min-width: 768px and max-width: 991.99px]</span></li>
+							<li><span class="html-tag">.desktop-bs()</span> To make coding easier, for media size from the BootStrap V4.0 framework have been used.<br><span class="strong">[min-width: 992px and max-width: 1199.99px]</span></li>
+							<li><span class="html-tag">.desktop-wide-bs()</span> To make coding easier, for media size from the BootStrap V4.0 framework have been used.<br><span class="strong">[min-width: 1200px]</span></li>
+						</ul>
+
+						<br><span class="strong">Note:</span> IF you need bootstrap V3 media queries with less mixins, visit this <a href="http://simbo.github.io/2014/03/less-media-query-mixins.html" target="_blank">Link</a>.
+					</td>
+
+					<td>
+						<pre><code class="less">.media-max(850px,{<br>	div.test{<br>		width: 600px;<br>		background-color: crimson;<br>	}<br>});<br><br>.media-min(650px,{<br>   	div.test{<br>		width: 400px;<br>		background-color: crimson;<br>	}<br>});<br><br>.mobile({<br>   	div.test{<br>		width: 200px;<br>		background-color: darkgoldenrod;<br>	}<br>});<br><br>.desktop-bs({<br>	div.test{<br>		width: 800px;<br>		background-color: firebrick;<br>	}<br>});<br><br>.desktop-wide-bs({ <br>	div.test{ <br>		width: 1000px; <br>		background-color: crimson; <br>	} <br>});</code></pre>
+						<pre><code class="css">@media only screen and (max-width: 850px) {  <br>	div.test {  <br>		width: 600px;<br>		background-color: crimson;<br>	}<br>}<br><br>@media only screen and (min-width: 650px) {  <br>	div.test {  <br>		width: 400px;<br>		background-color: crimson;<br>	}<br>}<br><br>@media only screen and (max-width: 600px) {  <br>	div.test {  <br>		width: 200px;<br>		background-color: darkgoldenrod;<br>	}<br>}<br><br>@media only screen and (min-width: 992px) and (max-width: 1199.99px) {  <br>	div.test {  <br>		width: 800px;<br>		background-color: firebrick;<br>	}<br>}<br><br>@media only screen and (min-width: 1200px) {  <br>	div.test {  <br>		width: 1000px;<br>		background-color: crimson;<br>	}<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.background-size(<span class="green-text text-darken-1">@args</span>);<br><br>
+						<span class="strong">Note:</span> If would you like to use more shadows to a text, Don't forget to use semicolon at the end of mixin.<br>Because the semicolon in the mixin call is very important. If it is omitted, the comma between the two parameters will be deleted which ends up in an invalid css rule.
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.background-size(contain, cover;);<br><span class="hljs-comment">/*					↧<br>			This semicolon is important!<br>*/</span><br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-background-size: contain, cover;<br>	-moz-background-size: contain, cover;<br>	-o-background-size: contain, cover;<br>	background-size: contain, cover;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.filter(<span class="green-text text-darken-1">@args</span>);<br><br>
+					</td>
+
+					<td>
+						<pre><code class="less">div.test{<br>	.filter(grayscale(100%));<br>}</code></pre>
+						<pre><code class="css">div.test{<br>	-webkit-filter: grayscale(100%);<br>	filter: grayscale(100%);<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						.placeholder(<span class="green-text text-darken-1">@ruleset</span>);<br><br>
+						<span class="strong">Note:</span>Firefox adds a lower opacity to the placeholder, so we use opacity: 1 to fix this.
+					</td>
+
+					<td>
+						<pre><code class="less">input.test{<br>	.placeholder({color:#46464A});<br>}</code></pre>
+						<pre><code class="css">input.test::-webkit-input-placeholder {<br>	color: #46464A;<br>}  <br>input.test:-moz-placeholder {<br>	opacity: 1;<br>	color: #46464A;<br>}  <br>input.test::-moz-placeholder {<br>	opacity: 1;<br>	color: #46464A;<br>}  <br>input.test:-ms-input-placeholder {<br>	color: #46464A;<br>}  <br>input.test::-ms-input-placeholder {<br>	color: #46464A;<br>}  <br>input.test::placeholder {<br>	color: #46464A;<br>}</code></pre>
+					</td>
+				</tr>
+
+				<tr class="last-tr">
+					<td>
+						.selection(<span class="green-text text-darken-1">@ruleset</span>);<br><br>
+					</td>
+
+					<td>
+						<pre><code class="less">.selection({<br>	background-color:#651fff;<br>	color:#ede7f6;<br>});</code></pre>
+						<pre><code class="css">::-moz-selection {<br>	background-color: #651fff;<br>	color: #ede7f6;<br>}  <br>::selection {<br>	background-color: #651fff;<br>	color: #ede7f6;<br>}</code></pre>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+	</section>
+
+	<section class="copyright">
+		<h3>Copyright and license:</h3>
+		<p>Useful CSS With Less Mixins was built by <a href="https://github.com/MR-Mostafa" target="_blank">Mostafa Rahmati</a> and is supported by <a href="http://iranwebdesign.ir">IranWebDesign</a>.</p>
+		<p>Code released under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
+	</section>
+</main>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/highlight.pack.js"></script>
+<script src="./js/materialize.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
