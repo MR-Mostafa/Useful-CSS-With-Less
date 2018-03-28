@@ -6,12 +6,12 @@ ___
 ___
 
 ## How to Use
-Download `UsefulCSS.less` OR `UsefulCSS.min.less` and then copy the following code:
+Download the `UsefulCSS.less` OR `UsefulCSS.min.less` and then copy the following code at the right place given here:
 ```CSS
-/* place it into your <head> tag */
+/* place it into your HTML <head> tag */
 <link rel="stylesheet/less" href="UsefulCSS.min.less">
 
-/* OR use it @import from your less file */
+/* OR use @import in your less file */
 @import "../UsefulCSS.min.less";
 ```
 ___
