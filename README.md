@@ -38,7 +38,7 @@ div.radius {
 ___
 
 ## Mixin Names:
-| ?CSS property & Value |
+| CSS property & Value |
 |--------------------|
 | .opacity(@opacity); |
 | .border-radius(@radius; @elliptical); |
