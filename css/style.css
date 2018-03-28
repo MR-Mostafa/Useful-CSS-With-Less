@@ -1,0 +1,302 @@
+@import "fonts.css";
+@import "highlightjs.min.css";
+/*=================================================================================
+ * Useful CSS With Less
+ * by Mostafa Rahmati
+ * https://github.com/MR-Mostafa
+ *
+ * Code released under the MIT License
+ *================================================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  font-family: roboto, sans-serif, Tahoma, "Times New Roman", Arial;
+  overflow-x: hidden;
+  background: url("../img/bg.jpg") center center fixed no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+::-moz-selection {
+  background-color: #651fff;
+  color: #ede7f6;
+}
+::selection {
+  background-color: #651fff;
+  color: #ede7f6;
+}
+.hljs {
+  padding: 10px 15px;
+  border: 1px solid #212121;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+.hljs .hljs-comment span {
+  color: #75715e;
+  font-weight: normal;
+}
+.hljs .fixed-color > span {
+  color: #ae81ff;
+}
+.html-tag {
+  font-size: .8rem;
+  font-weight: bold;
+  background-color: #9e9e9e ;
+  padding: 1px 3px;
+}
+code {
+  overflow: auto;
+  max-height: 750px;
+}
+@media only screen and (min-width: 1200px) {
+  .main-padding {
+    padding: 0 150px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199.99px) {
+  .main-padding {
+    padding: 0 50px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 991.99px) {
+  .main-padding {
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .main-padding {
+    padding: 0 20px;
+  }
+}
+/*
+ ==================== header ====================
+*/
+header .navbar-fixed {
+  z-index: 1000;
+}
+header nav {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  zoom: 1;
+}
+header nav h1 {
+  width: 200px;
+  overflow: hidden;
+  padding-top: 14px !important;
+}
+header nav h1 a {
+  font-weight: bold;
+}
+header nav h1 a:hover::before {
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  zoom: 1;
+}
+header nav h1 a::before {
+  width: 37px;
+  height: 34px;
+  content: '';
+  display: inline-block;
+  vertical-align: text-top;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAiCAYAAADRcLDBAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkZDYwZjRjNi0zNjQwLTUwNGEtYmQ0NC0yYjUzYzVlMzRmYjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QkNENEM2N0MzMDFGMTFFOEFENjRDMTc1QTg0Qzg4NzQiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QkNENEM2N0IzMDFGMTFFOEFENjRDMTc1QTg0Qzg4NzQiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ZGQ2MGY0YzYtMzY0MC01MDRhLWJkNDQtMmI1M2M1ZTM0ZmI2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOmRkNjBmNGM2LTM2NDAtNTA0YS1iZDQ0LTJiNTNjNWUzNGZiNiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhOoSKAAAAQoSURBVHja7FhLbxtVFP7uY2Y8thPFrlMnbhBKhVQhWFAWSC0gpG5oBRISgi0LEGLP3yi/gAVq2VQ8JFh1AZuyYGmEhEBpFUQbklZJIH4/ZuY+ODNxmjQex3HArHKksa17zznzncc99xyzTz6dx9mKB+bojO9gttMxxloYxvCfE+kFE+D5vOTNhm3QQhDUmpDGAJLhRcvtxxbsvJSIiF9jCiBAIMCYIBsdIbHKLbveCvGL9DxccD3zdajMci/ixMP2BTAdIN2OgeT2EmPOS4tlfk2WSuLN0OrlICQA5C/GMXWyBlYLsEDbC5dfwOuSQpTVRicv54m7DouwI3ybRmw8L9lrLLO+BPt5w2RlxHQgLCNRi2EMDMZGlD86kdxTyBlJD7mMNFhF/PqAFpPwceakwhWkYruJQCZvT7OHsSSbo6iD2FMHrXEdH46YoRV9AAKH0gEC1ds3hIzjAsi4xWSfEnLotGQ9Ohij4qZ0j6xieHb5A5yZuwilurteEB7Wt77Dxub3kCL3GFyo6lg48xqerrxFMQ+S9Xi/0VnFyoPPaK1PlmdS3yVHxdXokL4dLJ97G5X5K0/sRlEL9x9+OwAxWCOQpcJFPHf+oyd4660V3F27iUjHIPzUXOKjkyt2n0IYNYd2I9VJFTWmN7QWhnXaUEk4RhEfW1wmKBjW2hQVZqyGY1SFf1s6GcZVv/+hNI2nUxCnIE5BjCJ5sjZNp9YQa800QLDUYhWDCEMFV8Y3pkiqYp+uGqWCExW7sZ5gKR3vYukVZP0i2t0d6hV2r2Tfm0G5dClFgd1rLgePPT6IuBlRtp9c6YfpqYVruHr5K2xs3YGiG1XKLBZKL2OpfDXlsmvTjRwQWD6ydMtRN5cQLrpBC/X23VSOSulK8oyjeus39KM2spni5KeDcydx9er6l+SNzokSTlMPce/B5wN93qQgdmOYo7hv7/yKH6ofUl9RmwhAqGq4U30fD7d+ohauOEhPO1lixsdNiAzyfgEr92+RW+/hmaV3sTj/Krn2XJIHnLmPky1uiOMWsNNfx6O/fsTvf35B31Xkc0XizVDDo092OmJBKXzM5CQ2d6p4tF2FnykQiDl4boFA+kkCx4A1JV8Y7qAX1AlIjdxvMZsvJ525oc7q6CNqxxemWNFsrkKZ3qeniUa7Rut/DKa6wYwZ/6bgCuLN+3MQZD0bjAFHGkqyUojxM9deJXToxDjy7KFO6eC0wvZHLHuMto7YlQEnXzHPCJOYY2Ml9qiWkzatnmAaGz2dU7hsN6QJfAme7AqzNkOQYtw0oVs5GIemMQ/v+UvFOKj9juijwNmatI7+xg/lGzrrvuNpzdod8odgU/tnIPZm3pLVEUexrG7Q+25LyVhD99V7m43e7VJZLru+qymeBlMiqTn/O9eTUUatPp91bnnahv8IMABYHdMeAD8c3wAAAABJRU5ErkJggg==") transparent left center no-repeat;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  zoom: 1;
+}
+header section.about {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #212121;
+  background-color: rgba(35, 35, 35, 0.8);
+}
+header section.about h2 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  text-shadow: #4f4f4f 1px 1px 1px;
+  padding-bottom: 5px;
+}
+header section.about p {
+  color: #eeeeee;
+  font-size: 1.5rem;
+}
+header section.about h2,
+header section.about p {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  zoom: 1;
+}
+/*
+ ==================== main ====================
+*/
+main section {
+  background: #fafafa;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 30px;
+  color: #212121;
+  padding-bottom: 12px;
+  overflow: hidden;
+}
+main section > div {
+  padding: 0 15px 15px;
+}
+main section h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px dashed #9e9e9e;
+  padding: 13px 15px 11px;
+  margin-bottom: 15px;
+}
+main section p.title {
+  font-weight: bold;
+}
+main section p:not(.title) {
+  padding-left: 5px;
+}
+main section a {
+  color: #6a1b9a;
+}
+main section a:hover {
+  color: #880e4f;
+}
+main section table tr {
+  border-bottom: 0;
+  border-top: 1px solid #9e9e9e;
+}
+main section table th {
+  padding: 15px 20px;
+}
+main section table td {
+  padding: 12px 20px;
+  vertical-align: text-top;
+}
+main section table thead > tr {
+  border-top: 0;
+}
+main section table span.strong {
+  font-weight: bold;
+  display: block;
+}
+main section table.striped > tbody > tr:nth-child(odd) {
+  background-color: rgba(242, 242, 242, 0.7);
+}
+main section table ul li {
+  font-size: 0.9rem;
+  padding: 8px 0;
+}
+main section table ul li::before {
+  content: '▸ ';
+  display: inline-block;
+}
+main section.include {
+  padding-bottom: 0;
+}
+main section.include table tr.last-tr {
+  padding-bottom: 15px;
+}
+main section.copyright {
+  -webkit-border-radius: 5px 0;
+  -moz-border-radius: 5px 0;
+  border-radius: 5px 0;
+}
+main section.copyright p {
+  text-align: center;
+}
+@media only screen and (min-width: 1200px) {
+  main section table th:first-child,
+  main section table td:first-child {
+    width: 40%;
+  }
+}
+/*
+ ==================== 404 ====================
+*/
+.page404 {
+  padding: 25px;
+}
+.page404 .radius {
+  width: 180px;
+  height: 180px;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  border: 12px solid #6e6e6e;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+.page404 .radius::before,
+.page404 .radius::after {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 30%;
+  left: 17%;
+  display: inline-block;
+  content: '';
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  background-color: #6e6e6e;
+}
+.page404 .radius::after {
+  left: auto;
+  right: 17%;
+}
+.page404 .radius #lips {
+  width: 0;
+  height: 0;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  padding: 25px;
+  border: 10px solid #6e6e6e;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position: absolute;
+  top: 65%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.page404 p#t404 {
+  color: #757575;
+  font-size: 8rem;
+  line-height: normal;
+  font-weight: normal;
+  text-align: center;
+  padding: 25px 0 5px;
+}
+.page404 p {
+  color: #9e9e9e;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
